@@ -1,0 +1,673 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>1001 for Tanu</title>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Hanken+Grotesk:wght@400;600;800&family=Noto+Sans:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@600&family=Noto+Sans+Bengali:wght@600&family=Noto+Sans+Tamil:wght@600&family=Noto+Sans+Telugu:wght@600&family=Noto+Sans+Gujarati:wght@600&family=Noto+Sans+Kannada:wght@600&family=Noto+Sans+Malayalam:wght@600&family=Noto+Sans+Oriya:wght@600&family=Noto+Sans+Gurmukhi:wght@600&family=Noto+Sans+Sinhala:wght@600&family=Noto+Nastaliq+Urdu:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@600&family=Noto+Sans+Hebrew:wght@600&family=Noto+Sans+Thai:wght@600&family=Noto+Sans+Georgian:wght@600&family=Noto+Sans+Armenian:wght@600&family=Noto+Sans+Myanmar:wght@600&family=Noto+Sans+Khmer:wght@600&family=Noto+Sans+Lao:wght@600&family=Noto+Sans+Ethiopic:wght@600&family=Noto+Sans+JP:wght@600&family=Noto+Sans+KR:wght@600&family=Noto+Sans+SC:wght@600&display=swap" rel="stylesheet">
+<style>
+  /* Concept: a box of chocolates. Her apology sits at the top in his own words.
+     One tap opens a full-screen show: each I love you fills the screen over one of her photos,
+     holds for a few seconds, fades, and the next one arrives. The tray below holds every piece. */
+  :root {
+    --bg: #FDEEF1;
+    --fg: #2B1410;
+    --muted: #7B5754;
+    --line: #EBC9D0;
+    --accent: #C2255C;
+    --on-accent: #FFFFFF;
+    --tray: #3A1D18;
+    --tray-fg: #FBE6E1;
+    --tray-line: #5C3A33;
+    --candy: #5B2F26;
+    --candy-fg: #F4D6CE;
+    --candy-hover: #74402F;
+    --gold: #D9A93F;
+    --on-gold: #2B1410;
+    --font-display: "Caprasimo", "Noto Sans", "Noto Sans Devanagari", Georgia, serif;
+    --font-body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-native: "Caprasimo", "Noto Sans", "Noto Sans Devanagari", "Noto Sans Bengali", "Noto Sans Tamil", "Noto Sans Telugu", "Noto Sans Gujarati", "Noto Sans Kannada", "Noto Sans Malayalam", "Noto Sans Oriya", "Noto Sans Gurmukhi", "Noto Sans Sinhala", "Noto Naskh Arabic", "Noto Sans Hebrew", "Noto Sans Thai", "Noto Sans Georgian", "Noto Sans Armenian", "Noto Sans Myanmar", "Noto Sans Khmer", "Noto Sans Lao", "Noto Sans Ethiopic", "Noto Sans JP", "Noto Sans KR", "Noto Sans SC", system-ui, serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1A0D0B;
+      --fg: #FBE6E1;
+      --muted: #C9A5A0;
+      --line: #3C2420;
+      --accent: #FF7FA6;
+      --on-accent: #2B0A15;
+      --tray: #2A1512;
+      --tray-line: #4A2B25;
+      --candy: #4A261F;
+      --candy-hover: #68392C;
+      --gold: #E2B65A;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1A0D0B;
+    --fg: #FBE6E1;
+    --muted: #C9A5A0;
+    --line: #3C2420;
+    --accent: #FF7FA6;
+    --on-accent: #2B0A15;
+    --tray: #2A1512;
+    --tray-line: #4A2B25;
+    --candy: #4A261F;
+    --candy-hover: #68392C;
+    --gold: #E2B65A;
+    color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.5;
+    padding-block: 28px 48px;
+    padding-inline: clamp(16px, 4vw, 32px);
+  }
+  .wrap { max-width: 960px; margin-inline: auto; display: grid; gap: 28px; }
+
+  .hero { display: grid; gap: 18px; }
+  .eyebrow {
+    margin: 0; font-size: .78rem; font-weight: 600; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  h1 {
+    margin: 0; font-family: var(--font-display); font-weight: 400;
+    font-size: clamp(1.7rem, 5.4vw, 2.8rem); line-height: 1.15; text-wrap: pretty;
+  }
+  .hl { color: var(--accent); }
+  .sorry { margin: 0; max-width: 46ch; font-size: clamp(1.15rem, 3.6vw, 1.5rem); line-height: 1.45; font-weight: 600; }
+  .names { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+  .names li {
+    border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px;
+    font-size: .74rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  }
+  .cta { display: grid; gap: 10px; justify-items: start; }
+  .start {
+    font: inherit; font-weight: 600; font-size: 1.15rem; min-height: 58px; padding: 0 36px;
+    border: 0; border-radius: 999px; background: var(--accent); color: var(--on-accent); cursor: pointer;
+  }
+  .start:hover { filter: brightness(1.08); }
+  .start:focus-visible, .seg button:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
+  .cta-note { margin: 0; color: var(--muted); font-size: .95rem; }
+
+  .controls { display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; justify-content: space-between; }
+  .progress { flex: 1 1 220px; min-width: 0; display: grid; gap: 8px; }
+  .progress-text { font-size: .9rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .bar { height: 8px; border-radius: 99px; background: var(--line); overflow: hidden; }
+  .bar span { display: block; height: 100%; width: 0; background: var(--accent); transition: width .3s ease; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; gap: 2px; justify-self: start; }
+  .seg button {
+    font: inherit; font-size: .85rem; font-weight: 600; border: 0; background: transparent;
+    color: var(--fg); padding: 8px 14px; border-radius: 999px; cursor: pointer; min-height: 36px;
+  }
+  .seg button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+  .seg small { opacity: .7; font-weight: 400; margin-left: 4px; font-variant-numeric: tabular-nums; }
+
+  .tray {
+    background: var(--tray); border-radius: 28px; padding: 16px;
+    display: grid; gap: 8px; grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  }
+  .choc {
+    aspect-ratio: 1; border: 0; border-radius: 12px; padding: 0; cursor: pointer;
+    background: var(--candy); color: var(--candy-fg);
+    font: 600 .72rem var(--font-body); font-variant-numeric: tabular-nums;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.12), inset 0 -3px 0 rgba(0,0,0,.25);
+  }
+  .choc:hover { background: var(--candy-hover); }
+  .choc.open { background: var(--accent); color: var(--on-accent); }
+  .choc.gold { background: var(--gold); color: var(--on-gold); }
+  .choc.current, .choc:focus-visible { outline: 2px solid var(--tray-fg); outline-offset: 2px; }
+
+  .closing {
+    margin: 12px 0 0; font-family: var(--font-body); font-weight: 800; text-transform: uppercase;
+    font-size: clamp(1.5rem, 6vw, 2.6rem); line-height: 1.15; letter-spacing: .05em; color: var(--accent); text-wrap: balance;
+  }
+  .foot { margin: 0; color: var(--muted); font-size: .95rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+
+  /* Full-screen show. A deliberate single look: always dark, photo behind, white type. */
+  .show { position: fixed; inset: 0; z-index: 50; background: #000; color: #fff; overflow: hidden; }
+  .slide { position: absolute; inset: 0; opacity: 0; transition: opacity .9s ease; }
+  .slide.on { opacity: 1; }
+  .sb { position: absolute; inset: -40px; background-position: center; background-size: cover; filter: blur(26px) brightness(.5); }
+  .sf { position: absolute; inset: 0; background-repeat: no-repeat; background-position: 50% 22%; background-size: cover; }
+  .slide.on .sf { animation: drift 7s ease-out both; }
+  @keyframes drift { from { transform: scale(1); } to { transform: scale(1.07); } }
+  .scrim {
+    position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(to top, rgba(0,0,0,.84) 0%, rgba(0,0,0,.56) 34%, rgba(0,0,0,.06) 62%, rgba(0,0,0,.4) 100%);
+  }
+  .msg {
+    position: absolute; left: 0; right: 0; bottom: 0; display: grid; gap: 10px; justify-items: center; text-align: center;
+    padding: 24px clamp(20px, 6vw, 72px) calc(136px + env(safe-area-inset-bottom, 0px));
+    opacity: 0; transform: translateY(14px); transition: opacity .45s ease, transform .45s ease;
+  }
+  .msg.in { opacity: 1; transform: none; }
+  .msg p { margin: 0; }
+  .m-meta { font-size: .78rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.8); }
+  .m-native {
+    max-width: min(100%, 900px); font-family: var(--font-native); font-weight: 600; font-synthesis: none;
+    font-size: clamp(2.4rem, 9.5vw, 5.6rem); line-height: 1.2; overflow-wrap: anywhere;
+    text-shadow: 0 2px 28px rgba(0,0,0,.65);
+  }
+  .m-native[lang="ur"] { font-family: "Noto Nastaliq Urdu", var(--font-native); line-height: 2; }
+  .m-roman { font-size: 1.15rem; font-style: italic; color: rgba(255,255,255,.88); }
+  .m-english { max-width: 36ch; font-size: 1.2rem; text-shadow: 0 1px 12px rgba(0,0,0,.6); }
+  .m-english .nm { color: #FFA3C0; font-weight: 600; }
+  .m-tail {
+    margin-top: 6px !important; max-width: min(100%, 22ch); font-family: var(--font-body); font-weight: 800;
+    font-size: clamp(1.4rem, 6vw, 2.6rem); line-height: 1.15; letter-spacing: .05em; text-transform: uppercase;
+    color: #FFD27A; text-wrap: balance; text-shadow: 0 2px 20px rgba(0,0,0,.7);
+  }
+
+  .s-top {
+    position: absolute; top: 0; left: 0; right: 0; z-index: 2; display: flex; gap: 8px; align-items: center; justify-content: space-between;
+    padding: calc(12px + env(safe-area-inset-top, 0px)) clamp(12px, 3vw, 24px) 12px;
+  }
+  .s-count { font-size: .9rem; font-weight: 600; font-variant-numeric: tabular-nums; color: rgba(255,255,255,.92); }
+  .s-left { display: grid; gap: 2px; min-width: 0; }
+  .s-now { font-size: .76rem; color: rgba(255,255,255,.82); max-width: 44vw; overflow-wrap: anywhere; }
+  .s-state { font-size: .8rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #FFA3C0; }
+  .s-btns { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+  .sbtn {
+    font: inherit; font-size: .88rem; font-weight: 600; min-height: 40px; padding: 6px 14px; border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.35); background: rgba(0,0,0,.38); color: #fff; cursor: pointer;
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  }
+  .sbtn:hover { background: rgba(0,0,0,.6); }
+  .sbtn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .s-bot {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; display: grid; gap: 8px;
+    padding: 12px clamp(12px, 3vw, 24px) calc(16px + env(safe-area-inset-bottom, 0px));
+  }
+  .s-nav { display: flex; gap: 12px; align-items: center; }
+  .s-seg {
+    justify-self: center; display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.35); background: rgba(0,0,0,.4);
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  }
+  .s-seg button {
+    font: inherit; font-size: .88rem; font-weight: 600; min-height: 36px; padding: 6px 18px; border: 0;
+    border-radius: 999px; background: transparent; color: #fff; cursor: pointer;
+  }
+  .s-seg button[aria-pressed="true"] { background: #fff; color: #000; }
+  .s-seg button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .s-bar { flex: 1; height: 3px; border-radius: 9px; background: rgba(255,255,255,.25); overflow: hidden; }
+  .s-bar span { display: block; height: 100%; width: 0; background: #FF7FA6; transition: width .4s ease; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .slide, .msg, .bar span, .s-bar span { transition: none; }
+    .slide.on .sf { animation: none; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">Raat 3 baje ka sorry</p>
+    <h1>Raat mein gussa hokar gaye the na? <span class="hl">I love you too</span> nahi bola na? Lo ab <span class="hl">I love you too</span> ke saath 1001 I love you bol raha hoon. 1001 baar, 100 languages mein.</h1>
+    <p class="sorry">I am sorry my cutie <span class="hl">Tanu</span>. Woh love you maine dekha nahi tha, maaf kardo na apne pagal servant ko, aur gussa chhodkar ek pyaare se smile kardo 🫠🙂</p>
+    <ul class="names" aria-label="Pet names">
+      <li>Tanu</li><li>Chocos</li><li>Sweetheart</li><li>Jaan</li><li>My Life</li>
+    </ul>
+    <div class="cta">
+      <button type="button" class="start" id="start">Tap to begin</button>
+      <p class="cta-note">Ek ek karke, 1001 baar, poori screen par. Volume on rakhna.</p>
+    </div>
+  </header>
+
+  <section class="controls" aria-label="Box controls">
+    <div class="progress">
+      <div class="progress-text" id="ptext">0 of 1,001 unwrapped</div>
+      <div class="bar"><span id="pfill"></span></div>
+    </div>
+    <div class="seg" role="group" aria-label="Show">
+      <button type="button" data-f="all" aria-pressed="true">All <small>1001</small></button>
+      <button type="button" data-f="in" aria-pressed="false">India <small>190</small></button>
+      <button type="button" data-f="world" aria-pressed="false">World <small>810</small></button>
+    </div>
+  </section>
+
+  <main>
+    <div class="tray" id="tray" aria-label="Box of 1001 chocolates. Tap one to start the show from there."></div>
+  </main>
+
+  <p class="closing">Aur koi aagya madam ji?</p>
+  <p class="foot">Yours permanent servant</p>
+</div>
+
+<div class="show" id="show" role="dialog" aria-modal="true" aria-label="1001 I love yous" hidden>
+  <div class="slide" id="slideA"><div class="sb"></div><div class="sf"></div></div>
+  <div class="slide" id="slideB"><div class="sb"></div><div class="sf"></div></div>
+  <div class="scrim"></div>
+  <div class="s-top">
+    <div class="s-left"><span class="s-count" id="scount"></span><span class="s-now" id="snow"></span></div>
+    <span class="s-state" id="sstate" hidden>Paused</span>
+    <div class="s-btns">
+      <button type="button" class="sbtn" id="smusic" hidden>Music on</button>
+      <button type="button" class="sbtn" id="splay">Pause</button>
+      <button type="button" class="sbtn" id="sclose">Close</button>
+    </div>
+  </div>
+  <div class="msg" id="msg">
+    <p class="m-meta" id="mmeta"></p>
+    <p class="m-native" id="mnative" lang="hi" dir="ltr"></p>
+    <p class="m-roman" id="mroman"></p>
+    <p class="m-english" id="meng"></p>
+    <p class="m-tail" id="mtail" hidden></p>
+  </div>
+  <div class="s-bot">
+    <div class="s-seg" role="group" aria-label="Speed" id="sspeed">
+      <button type="button" data-s="slow" aria-pressed="false">Slow</button>
+      <button type="button" data-s="medium" aria-pressed="true">Medium</button>
+      <button type="button" data-s="fast" aria-pressed="false">Fast</button>
+    </div>
+    <div class="s-nav">
+      <button type="button" class="sbtn" id="sprev">Back</button>
+      <div class="s-bar"><span id="sfill"></span></div>
+      <button type="button" class="sbtn" id="snext">Next</button>
+    </div>
+  </div>
+</div>
+<audio id="song" preload="none"></audio>
+
+<script>
+(function () {
+  var NAMES = ["Tanu", "Chocos", "Sweetheart", "Jaan", "My Life"];
+  var CAPS = ["always and forever","and tomorrow too", "every single morning", "even at 3 AM", "when we are far apart",
+              "even when we argue", "more than yesterday", "in every language there is", "across every distance", "forever"];
+  // code, language, native, romanization (blank when the native text is already Latin script)
+  var L = [
+    ["hi", "Hindi", "मुझे तुमसे प्यार है", "Mujhe tumse pyaar hai"],
+    ["bn", "Bengali", "আমি তোমাকে ভালোবাসি", "Ami tomake bhalobashi"],
+    ["te", "Telugu", "నేను నిన్ను ప్రేమిస్తున్నాను", "Nenu ninnu premistunnanu"],
+    ["mr", "Marathi", "माझं तुझ्यावर प्रेम आहे", "Majha tujhyavar prem aahe"],
+    ["ta", "Tamil", "நான் உன்னை காதலிக்கிறேன்", "Naan unnai kaadhalikkiren"],
+    ["ur", "Urdu", "مجھے تم سے محبت ہے", "Mujhe tum se mohabbat hai"],
+    ["gu", "Gujarati", "હું તને પ્રેમ કરું છું", "Hu tane prem karu chhu"],
+    ["kn", "Kannada", "ನಾನು ನಿನ್ನನ್ನು ಪ್ರೀತಿಸುತ್ತೇನೆ", "Naanu ninnannu preetisuttene"],
+    ["ml", "Malayalam", "ഞാൻ നിന്നെ സ്നേഹിക്കുന്നു", "Njaan ninne snehikkunnu"],
+    ["or", "Odia", "ମୁଁ ତୁମକୁ ଭଲ ପାଏ", "Mu tumaku bhala paye"],
+    ["pa", "Punjabi", "ਮੈਨੂੰ ਤੇਰੇ ਨਾਲ ਪਿਆਰ ਹੈ", "Mainu tere naal pyaar hai"],
+    ["as", "Assamese", "মই তোমাক ভাল পাওঁ", "Moi tomak bhal paun"],
+    ["ne", "Nepali", "म तिमीलाई माया गर्छु", "Ma timilai maya garchhu"],
+    ["sa", "Sanskrit", "अहं त्वां प्रेम करोमि", "Aham tvaam prema karomi"],
+    ["kok", "Konkani", "हांव तुजेर मोग करता", "Hanv tujer mog korta"],
+    ["sd", "Sindhi", "مان توکي پيار ڪريان ٿو", "Maan tokhe pyaar kariyaan tho"],
+    ["mai", "Maithili", "हम अहाँ सँ प्रेम करैत छी", "Hum ahaan san prem karait chhi"],
+    ["bho", "Bhojpuri", "हम तोहसे प्यार करेनी", "Hum tohse pyaar kareni"],
+    ["hi-Latn", "Hinglish", "Mujhe tumse bahut pyaar hai", ""],
+    ["en", "English", "I love you", ""],
+    ["es", "Spanish", "Te amo", ""],
+    ["fr", "French", "Je t'aime", ""],
+    ["de", "German", "Ich liebe dich", ""],
+    ["it", "Italian", "Ti amo", ""],
+    ["pt", "Portuguese", "Eu te amo", ""],
+    ["ru", "Russian", "Я тебя люблю", "Ya tebya lyublyu"],
+    ["ja", "Japanese", "愛してる", "Aishiteru"],
+    ["ko", "Korean", "사랑해", "Saranghae"],
+    ["zh-Hans", "Mandarin", "我爱你", "Wǒ ài nǐ"],
+    ["yue", "Cantonese", "我愛你", "Ngo oi nei"],
+    ["ar", "Arabic", "أحبك", "Uhibbuki"],
+    ["tr", "Turkish", "Seni seviyorum", ""],
+    ["el", "Greek", "Σε αγαπώ", "Se agapó"],
+    ["nl", "Dutch", "Ik hou van jou", ""],
+    ["sv", "Swedish", "Jag älskar dig", ""],
+    ["no", "Norwegian", "Jeg elsker deg", ""],
+    ["da", "Danish", "Jeg elsker dig", ""],
+    ["fi", "Finnish", "Minä rakastan sinua", ""],
+    ["pl", "Polish", "Kocham cię", ""],
+    ["cs", "Czech", "Miluji tě", ""],
+    ["sk", "Slovak", "Ľúbim ťa", ""],
+    ["hu", "Hungarian", "Szeretlek", ""],
+    ["ro", "Romanian", "Te iubesc", ""],
+    ["bg", "Bulgarian", "Обичам те", "Obicham te"],
+    ["sr", "Serbian", "Волим те", "Volim te"],
+    ["hr", "Croatian", "Volim te", ""],
+    ["sl", "Slovenian", "Ljubim te", ""],
+    ["uk", "Ukrainian", "Я тебе кохаю", "Ya tebe kokhayu"],
+    ["he", "Hebrew", "אני אוהב אותך", "Ani ohev otakh"],
+    ["fa", "Persian", "دوستت دارم", "Dooset daram"],
+    ["th", "Thai", "ฉันรักเธอ", "Chan rak ther"],
+    ["vi", "Vietnamese", "Anh yêu em", ""],
+    ["id", "Indonesian", "Aku cinta kamu", ""],
+    ["ms", "Malay", "Saya cinta padamu", ""],
+    ["tl", "Filipino", "Mahal kita", ""],
+    ["sw", "Swahili", "Nakupenda", ""],
+    ["zu", "Zulu", "Ngiyakuthanda", ""],
+    ["xh", "Xhosa", "Ndiyakuthanda", ""],
+    ["af", "Afrikaans", "Ek is lief vir jou", ""],
+    ["am", "Amharic", "እወድሻለሁ", "Ewodishalehu"],
+    ["yo", "Yoruba", "Mo nifẹ rẹ", ""],
+    ["ig", "Igbo", "Ahụrụ m gị n'anya", ""],
+    ["ha", "Hausa", "Ina son ki", ""],
+    ["so", "Somali", "Waan ku jeclahay", ""],
+    ["ga", "Irish", "Tá grá agam duit", ""],
+    ["cy", "Welsh", "Rwy'n dy garu di", ""],
+    ["gd", "Scottish Gaelic", "Tha gaol agam ort", ""],
+    ["is", "Icelandic", "Ég elska þig", ""],
+    ["lv", "Latvian", "Es tevi mīlu", ""],
+    ["lt", "Lithuanian", "Aš tave myliu", ""],
+    ["et", "Estonian", "Ma armastan sind", ""],
+    ["sq", "Albanian", "Të dua", ""],
+    ["mk", "Macedonian", "Те сакам", "Te sakam"],
+    ["ka", "Georgian", "მიყვარხარ", "Miqvarkhar"],
+    ["hy", "Armenian", "Ես քեզ սիրում եմ", "Yes kez sirum em"],
+    ["az", "Azerbaijani", "Mən səni sevirəm", ""],
+    ["kk", "Kazakh", "Мен сені жақсы көремін", "Men seni zhaqsy koremin"],
+    ["uz", "Uzbek", "Men seni sevaman", ""],
+    ["mn", "Mongolian", "Би чамд хайртай", "Bi chamd khairtai"],
+    ["my", "Burmese", "ငါ မင်းကို ချစ်တယ်", "Nga min ko chit tal"],
+    ["km", "Khmer", "ខ្ញុំស្រលាញ់អ្នក", "Khnhom srolanh neak"],
+    ["lo", "Lao", "ຂ້ອຍຮັກເຈົ້າ", "Khoi hak chao"],
+    ["mt", "Maltese", "Inħobbok", ""],
+    ["eo", "Esperanto", "Mi amas vin", ""],
+    ["la", "Latin", "Amo te", ""],
+    ["eu", "Basque", "Maite zaitut", ""],
+    ["ca", "Catalan", "T'estimo", ""],
+    ["gl", "Galician", "Quérote", ""],
+    ["lb", "Luxembourgish", "Ech hunn dech gär", ""],
+    ["haw", "Hawaiian", "Aloha au iā ʻoe", ""],
+    ["mi", "Maori", "Kei te aroha au ki a koe", ""],
+    ["sm", "Samoan", "Ou te alofa ia te oe", ""],
+    ["ht", "Haitian Creole", "Mwen renmen w", ""],
+    ["qu", "Quechua", "Munayki", ""],
+    ["gn", "Guarani", "Rohayhu", ""],
+    ["mg", "Malagasy", "Tiako ianao", ""],
+    ["ku", "Kurdish", "Ez te hez dikim", ""],
+    ["hmn", "Hmong", "Kuv hlub koj", ""],
+    ["si", "Sinhala", "මම ඔබට ආදරෙයි", "Mama obata aadareyi"],
+    ["yi", "Yiddish", "איך האב דיך ליב", "Ikh hob dikh lib"]
+  ];
+  var RTL = { ar: 1, he: 1, ur: 1, fa: 1, sd: 1, yi: 1 };
+  var INDIA = 19, TOTAL = 1001, KEY = "for-tanu-1001";
+
+  // Photos shown behind the cards, in order, and the one kept for the last card.
+  var PHOTOS = ["photos/p01.jpg", "photos/p02.jpg", "photos/p03.jpg", "photos/p04.jpg", "photos/p05.jpg", "photos/p06.jpg",
+                "photos/p07.jpg", "photos/p08.jpg", "photos/p09.jpg", "photos/p10.jpg", "photos/p11.jpg"];
+  var LAST_PHOTO = "photos/last.jpg";
+  // Playlist, in the order he sent the songs. It loops back to the first after the last.
+  var SONGS = ["music/s01.mp3", "music/s02.mp3", "music/s03.mp3", "music/s04.mp3", "music/s05.mp3", "music/s06.mp3",
+               "music/s07.mp3", "music/s08.mp3", "music/s09.mp3", "music/s10.mp3", "music/s11.mp3"];
+  var TITLES = ["Samjhawan", "Hawayein", "Dekhha Tenu", "Duniyaa", "Raataan Lambiyan", "O Maahi",
+                "Paniyon Sa", "Itni Si Baat Hain", "Tera Fitoor", "Rabba Janda", "O Saathi"];
+
+  // How long each card stays on screen, in ms.
+  var HOLD = { slow: 4200, medium: 2600, fast: 1200 };
+  var speed = "medium";
+  var FADE = 450;
+
+  function cardAt(n) {
+    if (n === TOTAL) {
+      return { n: n, code: "hi", native: "मुझे भी तुमसे प्यार है", roman: "Mujhe bhi tumse pyaar hai",
+               meta: "No. 1001 of 1,001 · The one I forgot to say",
+               eng: ["I love you too, ", "Tanu", ". ", "Chocos", ". ", "Sweetheart", ". ", "Jaan", ". ", "My Life", ". Ab ek pyaari si smile kardo 🙂"],
+               rtl: false, tail: "Aur koi aagya madam ji?" };
+    }
+    var i = (n - 1) % 100, r = Math.floor((n - 1) / 100), l = L[i], name = NAMES[(i + r) % 5];
+    return { n: n, code: l[0], native: l[2], roman: l[3],
+             meta: "No. " + n + " of 1,001 · " + l[1],
+             eng: ["I love you, ", name, ", " + CAPS[r] + "."],
+             rtl: !!RTL[l[0]] };
+  }
+  function photoFor(n) { return n === TOTAL ? LAST_PHOTO : PHOTOS[(n - 1) % PHOTOS.length]; }
+
+  var $ = function (id) { return document.getElementById(id); };
+  var tray = $("tray"), show = $("show"), msg = $("msg");
+  var tiles = [], opened = {}, openCount = 0, vis = [], cur = 1;
+  var playing = false, t1 = null, t2 = null, musicOn = true, si = 0;
+
+  try {
+    var saved = JSON.parse(localStorage.getItem(KEY) || "[]");
+    if (Array.isArray(saved)) saved.forEach(function (n) { if (n >= 1 && n <= TOTAL && !opened[n]) { opened[n] = 1; openCount++; } });
+  } catch (e) {}
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(Object.keys(opened).map(Number))); } catch (e) {}
+  }
+
+  var frag = document.createDocumentFragment();
+  for (var n = 1; n <= TOTAL; n++) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "choc" + (n === TOTAL ? " gold" : "") + (opened[n] ? " open" : "");
+    b.textContent = n;
+    b.dataset.n = n;
+    b.setAttribute("aria-label", n === TOTAL ? "The golden chocolate, number 1001" : "Chocolate " + n);
+    tiles[n] = b;
+    frag.appendChild(b);
+  }
+  tray.appendChild(frag);
+
+  function progress() {
+    $("ptext").textContent = openCount === TOTAL
+      ? "All 1,001 unwrapped. I love you too."
+      : openCount.toLocaleString("en-US") + " of 1,001 unwrapped";
+    $("pfill").style.width = (openCount / TOTAL * 100) + "%";
+  }
+
+  function applyFilter(f) {
+    vis = [];
+    for (var n = 1; n <= TOTAL; n++) {
+      var g = n === TOTAL ? "special" : ((n - 1) % 100 < INDIA ? "in" : "world");
+      var ok = f === "all" || g === f;
+      tiles[n].hidden = !ok;
+      if (ok) vis.push(n);
+    }
+    Array.prototype.forEach.call(document.querySelectorAll("[data-f]"), function (btn) {
+      btn.setAttribute("aria-pressed", btn.dataset.f === f ? "true" : "false");
+    });
+  }
+
+  // Photos: two stacked slides cross-fade.
+  var slides = [$("slideA"), $("slideB")], active = -1, curSrc = "", dims = {};
+  PHOTOS.concat([LAST_PHOTO]).forEach(function (src) {
+    var im = new Image();
+    im.onload = function () { dims[src] = [im.naturalWidth, im.naturalHeight]; };
+    im.src = src;
+  });
+  function fitFor(src) {
+    var d = dims[src];
+    if (!d) return "cover";
+    var photoPortrait = d[1] >= d[0], screenPortrait = window.innerHeight >= window.innerWidth;
+    return photoPortrait === screenPortrait ? "cover" : "contain";
+  }
+  function paint(slide, src) {
+    var url = 'url("' + src + '")';
+    slide.firstChild.style.backgroundImage = url;
+    slide.lastChild.style.backgroundImage = url;
+    slide.lastChild.style.backgroundSize = fitFor(src);
+  }
+  function setPhoto(src) {
+    if (src === curSrc) return;
+    curSrc = src;
+    var next = active === 0 ? 1 : 0;
+    paint(slides[next], src);
+    if (active >= 0) slides[active].classList.remove("on");
+    slides[next].classList.remove("on");
+    void slides[next].offsetWidth;
+    slides[next].classList.add("on");
+    active = next;
+  }
+  window.addEventListener("resize", function () {
+    if (active >= 0 && curSrc) slides[active].lastChild.style.backgroundSize = fitFor(curSrc);
+  });
+
+  function render(n) {
+    var c = cardAt(n);
+    $("mmeta").textContent = c.meta;
+    var nat = $("mnative");
+    nat.textContent = c.native;
+    nat.setAttribute("lang", c.code);
+    nat.setAttribute("dir", c.rtl ? "rtl" : "ltr");
+    var rom = $("mroman");
+    rom.textContent = c.roman;
+    rom.hidden = !c.roman;
+    var eng = $("meng");
+    eng.textContent = "";
+    c.eng.forEach(function (part, idx) {
+      if (idx % 2 === 1) {
+        var s = document.createElement("span");
+        s.className = "nm"; s.textContent = part; eng.appendChild(s);
+      } else {
+        eng.appendChild(document.createTextNode(part));
+      }
+    });
+    var idx = vis.indexOf(n);
+    $("scount").textContent = (idx < 0 ? n : idx + 1) + " / " + vis.length;
+    var tail = $("mtail");
+    tail.textContent = c.tail || "";
+    tail.hidden = !c.tail;
+    $("sfill").style.width = ((idx < 0 ? 0 : idx + 1) / vis.length * 100) + "%";
+    if (tiles[cur] && tiles[cur] !== tiles[n]) tiles[cur].classList.remove("current");
+    if (!opened[n]) { opened[n] = 1; openCount++; save(); }
+    tiles[n].classList.add("open", "current");
+    progress();
+  }
+
+  function clearTimers() { clearTimeout(t1); clearTimeout(t2); }
+  function holdMs() { return HOLD[speed]; }
+  function sync() {
+    var idx = vis.indexOf(cur), atEnd = vis.length > 0 && idx === vis.length - 1;
+    $("splay").textContent = playing ? "Pause" : (atEnd ? "Replay" : "Play");
+    $("sstate").hidden = playing || atEnd;
+  }
+  function schedule(n) {
+    clearTimers();
+    var idx = vis.indexOf(n);
+    if (idx === vis.length - 1) { playing = false; sync(); return; }
+    t1 = setTimeout(function () {
+      msg.classList.remove("in");
+      t2 = setTimeout(function () { startCard(idx < 0 ? vis[0] : vis[idx + 1]); }, FADE);
+    }, FADE + holdMs());
+  }
+  function startCard(n) {
+    clearTimers();
+    render(n);
+    cur = n;
+    setPhoto(photoFor(n));
+    msg.classList.remove("in");
+    void msg.offsetWidth;
+    msg.classList.add("in");
+    sync();
+    if (playing) schedule(n);
+  }
+
+  var audio = $("song"), errCount = 0;
+  function nowText(t) { $("snow").textContent = t; }
+  function musicLabel(t) { $("smusic").textContent = t; }
+  function musicPlay() {
+    if (!SONGS.length || !musicOn) return;
+    if (!audio.getAttribute("src")) audio.src = SONGS[si];
+    audio.volume = 0.85;
+    nowText("Loading music…");
+    var p = audio.play();
+    if (p && p.catch) p.catch(function () {
+      nowText("Tap Play music to start the songs");
+      musicLabel("Play music");
+    });
+  }
+  function nextSong() {
+    si = (si + 1) % SONGS.length;
+    audio.src = SONGS[si];
+    musicPlay();
+  }
+  audio.addEventListener("playing", function () {
+    errCount = 0;
+    nowText("Now playing: " + TITLES[si]);
+    musicLabel("Music on");
+  });
+  audio.addEventListener("ended", nextSong);
+  audio.addEventListener("error", function () {
+    errCount++;
+    nowText("Can't load " + SONGS[si] + ". Check the file sits next to index.html.");
+    if (errCount < SONGS.length) setTimeout(function () { if (!show.hidden) nextSong(); }, 1200);
+    else musicLabel("Music off");
+  });
+  if (SONGS.length) $("smusic").hidden = false;
+
+  var opener = null;
+  function openShow(n) {
+    opener = document.activeElement;
+    show.hidden = false;
+    document.body.style.overflow = "hidden";
+    playing = true;
+    if (vis.indexOf(n) < 0) n = vis[0];
+    startCard(n);
+    musicPlay();
+    $("splay").focus({ preventScroll: true });
+  }
+  function closeShow() {
+    clearTimers();
+    playing = false;
+    show.hidden = true;
+    document.body.style.overflow = "";
+    audio.pause();
+    progress();
+    if (opener && opener.focus) opener.focus({ preventScroll: true });
+  }
+  function togglePlay() {
+    var idx = vis.indexOf(cur);
+    if (playing) {
+      playing = false; clearTimers();
+      msg.classList.add("in");
+      sync();
+    } else if (idx === vis.length - 1) {
+      playing = true; startCard(vis[0]);
+    } else {
+      playing = true; msg.classList.add("in"); sync(); schedule(cur);
+    }
+  }
+  function step(dir) {
+    var idx = vis.indexOf(cur);
+    if (idx < 0) idx = dir > 0 ? -1 : 0;
+    startCard(vis[(idx + dir + vis.length) % vis.length]);
+  }
+
+  $("start").addEventListener("click", function () { openShow(vis[0]); });
+  tray.addEventListener("click", function (e) {
+    var t = e.target.closest ? e.target.closest(".choc") : null;
+    if (t) openShow(Number(t.dataset.n));
+  });
+  document.querySelector(".controls .seg").addEventListener("click", function (e) {
+    var t = e.target.closest ? e.target.closest("button") : null;
+    if (t) applyFilter(t.dataset.f);
+  });
+  $("sclose").addEventListener("click", closeShow);
+  $("splay").addEventListener("click", togglePlay);
+  $("sprev").addEventListener("click", function () { step(-1); });
+  $("snext").addEventListener("click", function () { step(1); });
+  $("sspeed").addEventListener("click", function (e) {
+    var t = e.target.closest ? e.target.closest("button") : null;
+    if (!t) return;
+    speed = t.dataset.s;
+    Array.prototype.forEach.call(this.querySelectorAll("button"), function (b) {
+      b.setAttribute("aria-pressed", b.dataset.s === speed ? "true" : "false");
+    });
+    if (playing) { msg.classList.add("in"); schedule(cur); }
+  });
+  $("smusic").addEventListener("click", function () {
+    if (musicOn && audio.paused) { musicPlay(); return; }
+    musicOn = !musicOn;
+    musicLabel(musicOn ? "Music on" : "Music off");
+    if (musicOn) musicPlay(); else { audio.pause(); nowText(""); }
+  });
+  show.addEventListener("click", function (e) {
+    if (e.target.closest && e.target.closest("button, input, .s-bot")) return;
+    togglePlay();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (show.hidden) return;
+    if (e.key === "Escape") closeShow();
+    else if (e.key === "ArrowRight") step(1);
+    else if (e.key === "ArrowLeft") step(-1);
+    else if (e.key === " " && !(e.target.closest && e.target.closest("button"))) { e.preventDefault(); togglePlay(); }
+  });
+
+  applyFilter("all");
+  progress();
+})();
+</script>
+
+</body></html>
